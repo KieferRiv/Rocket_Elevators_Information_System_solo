@@ -1,0 +1,32 @@
+.btn-warning {
+  color: #212529;
+  background-color: #b30b0b;
+  border-color: #070bff;
+}
+.btn-warning:hover {
+    color: #212529;
+    background-color: #160404;
+    border-color: #070bff;
+  }
+.btn-warning:focus {
+  color: #b30b0b;
+  background-color: #b30b0b;
+  border-color: #b30b0b;
+}
+.btn-warning:active {
+  background-color: #b30b0b;
+}
+#header {
+    background-color: #f8f8fa;
+}
+#elevatorTextFirstSlide {
+    color: #b30b0b;
+}
+.btn-primary{
+    color: red;
+    border-color: #4d4d5a;
+}
+.btn-primary:hover{
+  color: red;
+  border-color: #4d4d5a;
+}

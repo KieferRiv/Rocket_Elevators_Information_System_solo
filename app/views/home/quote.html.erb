@@ -1,0 +1,457 @@
+<!-- CONTACT -->
+			<section id="contact">
+				<div class="container">
+
+					<header class="text-center mb-60" id="contact">
+						<h2>Quote form</h2>
+						<p class="lead font-lato">Buy the best elevator on the market!</p>
+						<hr />
+					</header>
+
+                    <div class="container"></div>
+						<p>Select the type of building</p>
+					   <form id="form-elevator">
+                        <select id="elevatorSelection">
+                            <option value="" selected="selected">---select---</option>
+                            <option value="form_name0">Residential</option>
+                            <option value="form_name1">Commercial</option>
+                            <option value="form_name2">Corporate</option>
+                            <option value="form_name3">Hybrid</option>
+                        </select>
+					   </form>
+					   
+					</div>
+					<div>
+					
+
+						  <form name="form_name0" id="form_name0" class="box form_name0">
+							<h2>Residential elevators</h2>
+							<label for="fname">number of appartments:</label>
+							<input type="number" id="appartmentNum" name="appartmentNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of floors(without basements):</label>
+							<input type="number" id="floorNum" name="floorNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of basements:</label>
+							<input type="number" id="basementNum" class="DropChange" name="basementNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<span id="spanRes"></span>
+						  </form>
+
+					</div>
+					<div>
+			
+
+						  <form name="form_name1" id="form_name1" class="box form_name1">
+							<h2>Commercial elevators</h2>
+							<label for="fname">number of distinct businesses:</label>
+							<input type="number" id="busNum" name="busNum" min="1" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of floors:</label>
+							<input type="number" id="comFloorNum" name="comFloorNum" min="1" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of basements:</label>
+							<input type="number" id="comBasementNum" name="comBasementNum" min="1" max="99" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of parking spaces:</label>
+							<input type="number" id="parkNum" name="parkNum" min="1" max="100000" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of elevator cages to be deployed:</label>
+							<input type="number" id="comElNum" class="val1 DropChange" name="comElNum" min="1" max="999" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<span id="spanCom"></span>
+						  </form>
+
+					</div>
+					<div>
+						
+
+						  <form name="form_name2" id="form_name2" class="box form_name2">
+							<h2>Corporate elevators</h2>
+							<label for="fname">Number of separate tenant companies:</label>
+							<input type="number" id="tenant" name="tenant" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of floors(without basements):</label>
+							<input type="number" id="corpFloorNum" name="corpFloorNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of basements:</label>
+							<input type="number" id="corpBasementNum" name="corpBasementNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of parking spaces:</label>
+							<input type="number" id="corpParkNum" name="corpParkNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">maximum number of occupants per floor:</label>
+							<input type="number" id="corpMax" class="DropChange" name="corpMax" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<span id="spanCorp"></span>
+						  </form>
+
+					</div>
+					<div>
+
+						  <form name="form_name3" id="form_name3" class="box form_name3">
+							<h2>Hybrid elevators</h2>
+							<label for="fname">Number of distinct companies:</label>
+							<input type="number" id="hybridCompanies" name="hybridCompanies" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of floors(without basements):</label>
+							<input type="number" id="hybridFloorNum" name="hybridFloorNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of basements:</label>
+							<input type="number" id="hybridBasementNum" name="hybridBasementNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">number of parking spaces:</label>
+							<input type="number" id="hybridParkNum" name="hybridParkNum" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<label for="lname">maximum number of occupants per floor:</label>
+							<input type="number" id="hybridMax" name="hybridMax" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>><br><br>
+							<label for="lname">number of hours of activity of the building per day:</label>
+							<input type="number" max="24" id="hybridHour" class="DropChange" name="hybridHour" min="1" onkeypress='return event.charCode >= 48 && event.charCode <= 57'><br><br>
+							<span id="spanHyb"></span>
+						  </form>
+
+					</div>
+					<div id="val2" class="DropChange">
+						<div>
+						 <label for="price1">standart</label>
+						 <input type="radio" id="price1" name="price" value="7565">
+						</div>
+						<div>
+						 <label for="price1">prenium</label>
+						 <input type="radio" id="price2" name="price" value="12345">
+						</div>
+						<div>
+						 <label for="price1">excellium</label>
+						 <input type="radio" id="price3" name="price" value="15400">
+						</div>
+					</div>
+					<div id=radioReset>
+					<p>cage cost: <span id="price">0</span>$</p>
+					<p>Standart installation fees: <span id="inPrice" value="standartfee">0</span>$</p>
+					<p>Prenium installation fees: <span id="inPriceP" value="preniumfee">0</span>$</p>
+					<p>Excellium installation fees: <span id="inPriceE" value="excelliumfee">0</span>$</p>
+					<p>Total Cost: <span id="totalCost">0</span>$</p>
+					</div>
+				</div>
+			</section>
+			<!-- /CONTACT -->
+
+
+
+
+			<!-- FOOTER -->
+			<footer id="footer">
+				<div class="container">
+
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="letter-spacing-1">WHY US?</h3>
+
+							<!-- Small Description -->
+							<p>
+								You should choose us because we make the best elevators on the planet.
+							</p>
+							<h2>(581) 701-0303</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our elevator Newsletter to get Important News about elevators & Offers</p>
+
+							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-success" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Rocket Elevators LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+	
+		<!-- PAGELEVEL SCRIPTS -->
+	
+
+		<!-- 
+			GMAP.JS 
+			http://hpneo.github.io/gmaps/
+		-->
+		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
+		<script src="/assets/plugins/gmaps.js"></script>
+
+		<script>
+	  //	$("#elevatorSelection").on("change", function() {
+    //	$("#" + $(this).val()).show().siblings().hide();
+    //	})
+		
+		$(document).ready(function() {
+  $("select").change(function() {
+    $(this).find("option:selected").each(function() {
+      var optionValue = $(this).attr("value");
+      if (optionValue) {
+        $(".box").not("." + optionValue).hide();
+		$("." + optionValue).show();
+		$('.box').trigger("reset");
+		
+      } else {
+		$(".box").hide();
+	
+      }
+    });
+  }).change();
+});
+		$('input').keyup(function(){
+			var commValue = Number($('#comElNum').val());
+			commValue = isNaN(commValue) ? '0' : commValue;
+			document.getElementById('spanCom').innerHTML = commValue +" lift cages";
+			
+		})
+		
+		
+       
+		document.getElementById("elevatorSelection").onchange = changeListener;
+  
+  		function changeListener(){
+  		var value = this.value
+  		
+		if(document.getElementById('elevatorSelection').value == "form_name0"){
+			
+			$(function() {
+		var callBack = (function(){
+			var valone = $('#appartmentNum').val();
+			var valFloor =$('#floorNum').val();
+			var valtwo = $('input[name="price"]:checked').val();
+			
+			var averagePerFloor = ((valone * 1) / (valFloor * 1));
+			
+			var elNumber0 = ((averagePerFloor * 1) / 6);
+			var elNumber = Math.ceil(elNumber0);
+
+			var colNum0 = ((valFloor * 1) / 20);
+			var colNum = Math.ceil(colNum0);
+
+			var totalCages =((elNumber * 1) * (colNum * 1));
+			totalCages = isNaN(totalCages) ? '0' : totalCages;
+			
+			document.getElementById('spanRes').innerHTML = totalCages + " lift cages" + '\xa0\xa0\xa0' + colNum + " required columns"
+			
+			//price residential//
+			var valtwo = $('input[name="price"]:checked').val();
+			var total = ((totalCages * 1) * (valtwo * 1));
+			total = isNaN(total) ? '0.00' : total;
+			$('#price').text(total);
+
+			var Price1 = $('input[id="price1"]:checked').val();
+			var totalfee = ((totalCages * 1) * (Price1 * 1) * 0.1);
+			totalfee = isNaN(totalfee) ? '0.00' : totalfee;
+			$('#inPrice').text(totalfee);
+			
+
+			var Price2 = $('input[id="price2"]:checked').val();
+			var totalfee2 = ((totalCages * 1) * (Price2 * 1) * 0.13);
+			totalfee2 = isNaN(totalfee2) ? '0.00' : totalfee2;
+			$('#inPriceP').text(totalfee2);
+			
+
+			var Price3 = $('input[id="price3"]:checked').val();
+			var totalfee3 = ((totalCages * 1) * (Price3 * 1) * 0.16);
+			totalfee3 = isNaN(totalfee3) ? '0.00' : totalfee3;
+			$('#inPriceE').text(totalfee3);
+
+			$('#totalCost').text((totalfee * 1) + (totalfee2 * 1) + (totalfee3 * 1) + (total * 1));
+			
+  		
+			
+			
+			});
+			$("input").change(callBack);
+			$("input").keypress(callBack);
+		})
+		}
+		else if(document.getElementById('elevatorSelection').value == "form_name1"){
+			$(function() {
+		var callBack2 = (function(){
+			var valone = $('#comElNum').val();
+			var valtwo = $('input[name="price"]:checked').val();
+			var total = ((valone * 1) * (valtwo * 1));
+			total = isNaN(total) ? '0.00' : total;
+			$('#price').text(total);
+		
+
+			var valone = $('#comElNum').val();
+			
+			var valtwo = $('input[id="price1"]:checked').val();
+			var totalfee = ((valone * 1) * (valtwo * 1) * 0.1);
+			totalfee = isNaN(totalfee) ? '0.00' : totalfee;
+			$('#inPrice').text(totalfee);
+
+			var val3 = $('input[id="price2"]:checked').val();
+			var totalfee2 = ((valone * 1) * (val3 * 1) * 0.13);
+			totalfee2 = isNaN(totalfee2) ? '0.00' : totalfee2;
+			$('#inPriceP').text(totalfee2);
+
+			var val4 = $('input[id="price3"]:checked').val();
+			var totalfee3 = ((valone * 1) * (val4 * 1) * 0.16);
+			totalfee3 = isNaN(totalfee3) ? '0.00' : totalfee3;
+			$('#inPriceE').text(totalfee3);
+
+			$('#totalCost').text((totalfee * 1) + (totalfee2 * 1) + (totalfee3 * 1) + (total * 1));
+
+		});
+		$("input").change(callBack2);
+			$("input").keypress(callBack2);
+		
+		});
+		}
+		else if(document.getElementById('elevatorSelection').value == "form_name3"){
+			$(function() {
+		var callBack1 = (function(){
+			var valFloor = $('#hybridFloorNum').val();
+			var valBas = $('#hybridBasementNum').val();
+			var valOc = $('#hybridMax').val();
+			var OcNumber = ((valOc * 1) * ((valBas *1) + (valFloor)*1));
+			console.log(valFloor)
+			var reqEl0 = (OcNumber * 1) / (1000);
+			var reqEl = Math.ceil(reqEl0);
+			reqEl = isNaN(reqEl) ? '0' : reqEl;
+
+			var elCol0 = ((valFloor * 1) + (valBas * 1)) / (20);
+			var elCol = Math.ceil(elCol0);
+
+			var elPerCol0 = (reqEl * 1) / (elCol * 1);
+			var elPerCol = Math.ceil(elPerCol0);
+			elPerCol = isNaN(elPerCol) ? '0' : elPerCol;
+
+			var totalEl0 = (elPerCol * 1) * (elCol * 1);
+			var totalEl = Math.ceil(totalEl0);
+			totalEl = isNaN(totalEl) ? '0' : totalEl;
+
+			document.getElementById('spanHyb').innerHTML = reqEl +" lift cages"
+			+ '\xa0\xa0\xa0' + elCol + " required columns" +'\xa0\xa0\xa0' + elPerCol + " elvators per column" + '\xa0\xa0\xa0'+totalEl + " Total elevators";
+			//var total = ((valone * 1) * (valtwo * 1));
+			//price hybrid//
+			var valtwo = $('input[name="price"]:checked').val();
+			var total = ((totalEl * 1) * (valtwo * 1));
+			total = isNaN(total) ? '0.00' : total;
+			$('#price').text(total);
+
+			var Price1 = $('input[id="price1"]:checked').val();
+			var totalfee = ((totalEl * 1) * (Price1 * 1) * 0.1);
+			totalfee = isNaN(totalfee) ? '0.00' : totalfee;
+			$('#inPrice').text(totalfee);
+			
+
+			var Price2 = $('input[id="price2"]:checked').val();
+			var totalfee2 = ((totalEl * 1) * (Price2 * 1) * 0.13);
+			totalfee2 = isNaN(totalfee2) ? '0.00' : totalfee2;
+			$('#inPriceP').text(totalfee2);
+			
+
+			var Price3 = $('input[id="price3"]:checked').val();
+			var totalfee3 = ((totalEl * 1) * (Price3 * 1) * 0.16);
+			totalfee3 = isNaN(totalfee3) ? '0.00' : totalfee3;
+			$('#inPriceE').text(totalfee3);
+			
+
+			$('#totalCost').text((totalfee * 1) + (totalfee2 * 1) + (totalfee3 * 1) + (total * 1));
+
+		});
+		$("input").change(callBack1);
+			$("input").keypress(callBack1);
+		});
+		}
+		else if(document.getElementById('elevatorSelection').value == "form_name2"){
+			$(function() {
+		 var callBack = (function(){
+			var valFloor = $('#corpFloorNum').val();
+			var valBas = $('#corpBasementNum').val();
+			var valOc = $('#corpMax').val();
+			var OcNumber = ((valOc * 1) * ((valBas *1) + (valFloor)*1));
+			console.log(valFloor)
+			var reqEl0 = (OcNumber * 1) / (1000);
+			var reqEl = Math.ceil(reqEl0);
+			reqEl = isNaN(reqEl) ? '0' : reqEl;
+
+			var elCol0 = ((valFloor * 1) + (valBas * 1)) / (20);
+			var elCol = Math.ceil(elCol0);
+
+			var elPerCol0 = (reqEl * 1) / (elCol * 1);
+			var elPerCol = Math.ceil(elPerCol0);
+			elPerCol = isNaN(elPerCol) ? '0' : elPerCol;
+
+			var totalEl0 = (elPerCol * 1) * (elCol * 1);
+			var totalEl = Math.ceil(totalEl0);
+			totalEl = isNaN(totalEl) ? '0' : totalEl;
+
+			document.getElementById('spanCorp').innerHTML = reqEl +" lift cages"
+			+ '\xa0\xa0\xa0' + elCol + " required columns" +'\xa0\xa0\xa0' + elPerCol + " elvators per column" + '\xa0\xa0\xa0'+totalEl + " Total elevators";
+			//var total = ((valone * 1) * (valtwo * 1));
+			//price hybrid//
+			
+			var valtwo = $('input[name="price"]:checked').val();
+			var total = ((totalEl * 1) * (valtwo * 1));
+			total = isNaN(total) ? '0.00' : total;
+			$('#price').text(total);
+
+			var Price1 = $('input[id="price1"]:checked').val();
+			var totalfee = ((totalEl * 1) * (Price1 * 1) * 0.1);
+			totalfee = isNaN(totalfee) ? '0.00' : totalfee;
+			$('#inPrice').text(totalfee);
+			
+
+			var Price2 = $('input[id="price2"]:checked').val();
+			var totalfee2 = ((totalEl * 1) * (Price2 * 1) * 0.13);
+			totalfee2 = isNaN(totalfee2) ? '0.00' : totalfee2;
+			$('#inPriceP').text(totalfee2);
+			
+
+			var Price3 = $('input[id="price3"]:checked').val();
+			var totalfee3 = ((totalEl * 1) * (Price3 * 1) * 0.16);
+			totalfee3 = isNaN(totalfee3) ? '0.00' : totalfee3;
+			$('#inPriceE').text(totalfee3);
+			
+			
+			$('#totalCost').text((totalfee * 1) + (totalfee2 * 1) + (totalfee3 * 1) + (total * 1));
+		});
+		$("input").change(callBack);
+			$("input").keypress(callBack);
+		});
+		
+		}
+		
+		  }
+		 
+
+
+		</script>
