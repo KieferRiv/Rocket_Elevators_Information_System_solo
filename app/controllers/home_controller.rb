@@ -7,6 +7,5 @@ class HomeController < ApplicationController
   def commercial
   end
 
-  def quote
-  end
+  
 end

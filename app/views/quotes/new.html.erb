@@ -1,0 +1,244 @@
+
+ <%= form_for( :quotes , :html => {:class => "form-horizontal", :role => "form"}, url: quotes_new_path) do |form| %>
+
+	<!-- Building Type Selection -->
+	<br>
+	<div class="heading-title heading-dotted text-center">
+	  <h2>Quote Form</h2>
+	  
+	</div>
+	
+	<center>
+	<h2>Quote Form</h2>
+	 
+		  <label for="buildingtype"><strong>Select the Building Type</strong></label>
+		  <select id="selectator" name="buildingType">
+			  <option value="">Select an Option</option>
+			  <option value="residential">Residential</option>
+			  <option value="commercial">Commercial</option>
+			  <option value="corporate">Corporate</option>
+			  <option value="hybrid">Hybrid</option>
+	  </select>
+	  <br>
+	</center>
+	
+	<!-- Residential -->
+	 
+	  <div id="residential" class="building_type" onkeyup= "residentialcalculator()">
+		<br><br>
+		<div class="heading-title heading-dotted text-center">
+		  <h2>Residential Building Form</h2>
+		</div>
+		
+	<div class="row">
+		<div class="col-md-4">
+		  <center>
+		  <label for="building-appartments"><strong>How many appartments are in the building?</strong>
+		  </label>
+		  <input name= 'ResidentialApartmentNumbers' type="number" id="res1"></center>
+		  </div>
+		  <div class="col-md-4">
+			<center>
+		  <label for="building-stories"><strong>How many stories are in the building?</strong>
+		  </label>
+		  <input name= 'ResidentialNumberOfFloors' type="number" id="res2"></center>
+		</div>
+		<div class="col-md-4">
+		  <center>
+		  <label for="building-basements"><strong>How many basements in the building?</strong>
+		  </label>
+		  <input name= 'ResidentialNumberOfBasements' type="number" id="res3"></center>
+		</div><br><br>
+	 </div>
+	</div>
+	
+	
+	<!-- Commercial -->
+	
+	<div id="commercial" class="building_type" onkeyup= "commercialcalculator()">
+	  <br><br>
+	  <div class="heading-title heading-dotted text-center">
+		<h2>Commercial Building Form</h2>
+	  </div>
+	  
+	<div class="row">
+	  <div class="col-md-4">
+		<center>
+		<label for="building-units"><strong>How many commercial units are in the building?</strong>
+		</label>
+		<input name= 'CommercialNumberOfStores' type="number" id="com1"></center>
+		</div>
+		<div class="col-md-4">
+		  <center>
+		<label for="building-stories"><strong>How many stories are in the building?</strong>
+		</label>
+		<input name= 'CommercialNumberOfFloors' type="number" id="com2"></center>
+	  </div>
+	  <div class="col-md-4">
+		<center>
+		<label for="building-basements"><strong>How many basements in the building?</strong>
+		</label>
+		<input name= 'CommercialNumberOfBasements' type="number" id="com3"></center>
+	  </div><br><br>
+	</div>
+	<div class="row">
+	<div class="col-md-4">
+	  <center>
+	<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+	</label>
+	<input name= 'CommercialParkingLevels' type="number" id="com4"></center>
+	</div>
+	<div class="col-md-4">
+	<center>
+	<label for="building-shafts"><strong>How many elevator shafts is needed the building?</strong>
+	</label>
+	<input name= 'CommercialNumberCages' type="number" id="com5"></center>
+	</div><br><br>
+	
+	
+	</div>
+	</div>
+	
+	<!-- Corporate-->
+	
+	<div id="corporate" class="building_type" onkeyup= "corporatecalculator()">
+	  <br><br>
+	  <div class="heading-title heading-dotted text-center">
+		<h2>Corporate Building Form</h2>
+	  </div>
+	  
+	<div class="row">
+	  <div class="col-md-4">
+		<center>
+		<label for="building-businesses"><strong>How many businesses are in the building?</strong>
+		</label>
+		<input name= 'CorporateNumberOfCompanies' type="number" id="cor1"></center>
+		</div>
+		<div class="col-md-4">
+		  <center>
+		<label for="building-stories"><strong>How many stories are in the building?</strong>
+		</label>
+		<input name= 'CorporateNumberOfFloors' type="number" id="cor2"></center>
+	  </div>
+	  <div class="col-md-4">
+		<center>
+		<label for="building-basements"><strong>How many basements in the building?</strong>
+		</label>
+		<input name= 'CorporateNumberOfBasements' type="number" id="cor3"></center>
+	  </div><br><br>
+	</div>
+	<div class="row">
+	<div class="col-md-4">
+	  <center>
+	<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+	</label>
+	<input name= 'CorporateParkingLevels' type="number" id="cor4"></center>
+	</div>
+	<div class="col-md-4">
+	<center>
+	<label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
+	</label>
+	<input name= 'CorporateOccupantsPerFloor' type="number" id="cor5"></center>
+	</div><br><br>
+	
+	
+	</div>
+	</div>
+	
+	<!-- Hybrid -->
+	
+	<div id="hybrid" class="building_type" onkeyup= "hybridcalculator()">
+	  <br><br>
+	  <div class="heading-title heading-dotted text-center">
+		<h2>Hybrid Building Form</h2>
+	  </div>
+	  
+	<div class="row">
+	  <div class="col-md-4">
+		<center>
+		<label for="building-units"><strong>How many commercial units are in the building?</strong>
+		</label>
+		<input name= 'HybridNumberOfStores' type="number" id="hyb1"></center>
+		</div>
+		<div class="col-md-4">
+		  <center>
+		<label for="building-stories"><strong>How many stories are in the building?</strong>
+		</label>
+		<input name= 'HybridNumberOfFloors' type="number" id="hyb2"></center>
+	  </div>
+	  <div class="col-md-4">
+		<center>
+		<label for="building-basements"><strong>How many basements in the building?</strong>
+		</label>
+		<input name= 'HybridNumberOfBasements' type="number" id="hyb3"></center>
+	  </div><br><br>
+	</div>
+	<div class="row">
+	<div class="col-md-4">
+	  <center>
+	<label for="building-parkings"><strong>How many parking lots are in the building?</strong>
+	</label>
+	<input name= 'HybridParkingLevels' type="number" id="hyb4"></center>
+	</div>
+	<div class="col-md-4">
+	<center>
+	<label for="building-occupants"><strong>What is the maximum number of occupants per stories</strong>
+	</label>
+	<input name= 'HybridOccupantsPerFloor' type="number" id="hyb5"></center>
+	</div>
+	
+	
+	
+	</div>
+	</div>
+	<br><br>
+	
+	<!--Shafts Needed-->
+	
+	<div class="heading-title heading-dotted text-center">
+	<h2>Elevator Shafts Needed</h2>
+	</div>
+	<center>
+	<label for="shaftsneeded"><strong>Number of Elevator Shafts needed:</strong></label>
+	<input name= 'estimatedCagesNeeded' readonly type="text" id="numberneeded"/>
+	
+	</center>
+	<br><br>
+	 <!--Installation Selector--> 
+	
+	<div class="heading-title heading-dotted text-center">
+	<h2>Select the Package</h2>
+	</div>
+	
+	<center>
+	<div>
+	 
+	<input name= 'packageSelection' id= "stan" type="radio" onclick="pricecalculator()" value="standard"> <strong>Standard</strong><br>
+	<br>
+	
+	<input name= 'packageSelection' id= "premium" type="radio" onclick="pricecalculator()" value="premium">  <strong>Premium</strong><br>
+	<br>
+	
+	<input name= 'packageSelection' id= "excelium" type="radio" onclick="pricecalculator()" value="excelium">  <strong>Excelium</strong><br>
+	<br>
+	</div>
+	<br>
+	<div class="heading-title heading-dotted text-center">
+	  <h2>Pricing</h2>  
+	</div>
+	<label><strong>Elevators (CAD$) </strong></label>
+	<input name= 'elevatorPrice'readonly type="text" id="elevatortotal"><br>
+	<br>
+	<label><strong>Installation Fee (CAD$)</strong></label>
+	<input name= 'installationCost' readonly type="text" id="servicetotal"><br>
+	<br>
+	<label><strong>Total Price (CAD$)</strong></label>
+	<input name= 'totalPrice' readonly type="text" id="totalprice">
+	 
+	<br><br>
+	
+	<%= form.submit 'Submit Request', class: "btn btn-primary" %>
+	</center>
+	
+	
+	<% end %>

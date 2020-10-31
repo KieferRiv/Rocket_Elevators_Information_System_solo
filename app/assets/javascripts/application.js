@@ -32,6 +32,7 @@
 
 //= require turbolinks
 
+//= require quote
 
 
 
