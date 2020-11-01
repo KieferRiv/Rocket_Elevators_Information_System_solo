@@ -1,21 +1,155 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RocketElevatorWebiste</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  
+  
+<script> var plugin_path = 'assets/javascripts' </script>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<%= csrf_meta_tags %>
 
-  <body>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-    <%= yield %>
+<meta charset="utf-8" />
+<title>Rocket Elevators</title>
+<meta name="description" content="" />
+
+
+    
+  
+  
+
+    <!-- mobile settings -->
+    <meta
+      name="viewport"
+      content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0"/>
+ 
+    <!-- WEB FONTS : use %7C instead of | (pipe) -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700"
+      rel="stylesheet"
+      type="text/css"/>
+
+</head>
+<body class = "enable-animation" style="wide">
+  
+      <div id="wrapper">
+      <!-- 
+				AVAILABLE HEADER CLASSES
+				Default nav height: 96px
+				.header-md 		= 70px nav height
+				.header-sm 		= 60px nav height
+				.b-0 		= remove bottom border (only with transparent use)
+				.transparent	= transparent header
+				.translucent	= translucent header
+				.sticky			= sticky header
+				.static			= static header
+				.dark			= dark header
+				.bottom			= header on bottom
+				
+				shadow-before-1 = shadow 1 header top
+				shadow-after-1 	= shadow 1 header bottom
+				shadow-before-2 = shadow 2 header top
+				shadow-after-2 	= shadow 2 header bottom
+				shadow-before-3 = shadow 3 header top
+				shadow-after-3 	= shadow 3 header bottom
+				.clearfix		= required for mobile menu, do not remove!
+				Example Usage:  class="clearfix sticky header-sm transparent b-0"
+			-->
+      <div id="header" class="navbar-toggleable-md fixed-top header-md clearfix" style = "position: fixed;">
+        <!-- TOP NAV -->
+        <header id="topNav">
+          <div class="container">
+            <!-- Mobile Menu Button -->
+            <button
+              class="btn btn-mobile"
+              data-toggle="collapse"
+              data-target=".nav-main-collapse"
+            >
+              <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <a class="logo float-left" >
+              <img
+                src="/assets/rocket/R2.png"
+                alt=""
+                style="width: 200px; height: 70px"
+              />
+            </a>
+
+            <!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+            <div
+              class="navbar-collapse collapse float-right nav-main-collapse submenu-dark"
+            >
+              <nav class="nav-main">
+                <!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+                <ul
+                  id="topMain"
+                  class="nav nav-pills nav-justified nav-onepage"
+                >
+                  <li class="active">
+                    <!-- HOME -->
+                    <%= link_to 'Home',root_path, method: :get %>
+                  </li>
+                  <li>
+                    <!-- SERVICES -->
+                    <%= link_to "Services" , home_index_path(anchor: 'services'), method: :get %>
+                  </li>
+                  <li>
+                    <!-- WORK -->
+                    <%= link_to "Work" , home_index_path(anchor: 'work'), method: :get %>
+                  </li>
+                  <li>
+                    <!-- NEWS -->
+                    <%= link_to "News" , home_index_path(anchor: 'news'), method: :get %>
+                  </li>
+                  <li>
+                    <!-- CLIENTS -->
+                    <%= link_to "Clients" , home_index_path(anchor: 'clients'), method: :get %>
+                  </li>
+                  <li>
+                    <!-- CONTACT -->
+                    <%= link_to "Contact" , home_index_path(anchor: 'contact'), method: :get %>
+                  </li>
+                 
+                  <li>
+                    <!-- ADMIN -->
+                    <a href="#slidetop"> Admin </a>
+                     <ul class="dropdown-menu">
+                        <% if admin_signed_in? %>
+                          <li><%= link_to "Backdoor", rails_admin.dashboard_path, method: :get %></li>
+                        <% else %>
+                          <li><%= link_to "Login", rails_admin.dashboard_path, method: :get %></li>
+                        <% end %>
+                        <% if admin_signed_in? %>
+                          <li role="separator" class="divider"></li>
+                          <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
+                        <% end %>
+                      </ul>
+                  </li>
+                   
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <!-- /Top Nav -->
+      </div>  
+
+      <%= yield %>
+
+   
   </body>
+
+
 </html>
