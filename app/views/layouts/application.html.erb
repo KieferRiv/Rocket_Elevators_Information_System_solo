@@ -125,17 +125,19 @@
                   <li>
                     <!-- ADMIN -->
                     <a href="#slidetop"> Admin </a>
-                     <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
                         <% if admin_signed_in? %>
                           <li><%= link_to "Backdoor", rails_admin.dashboard_path, method: :get %></li>
-                        <% else %>
-                          <li><%= link_to "Login", rails_admin.dashboard_path, method: :get %></li>
+                          <% else %>
+                          <li><%= link_to "Login", admins_sign_in_path , method: :get %></li>
+                          
                         <% end %>
                         <% if admin_signed_in? %>
                           <li role="separator" class="divider"></li>
                           <li><%= link_to "Logout", destroy_admin_session_path, method: :delete %></li>
                         <% end %>
                       </ul>
+                      
                   </li>
                    
                 </ul>

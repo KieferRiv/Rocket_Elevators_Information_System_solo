@@ -6,6 +6,7 @@ class HomeController < ApplicationController
 
   def commercial
   end
-
+  def new
+  end
   
 end
